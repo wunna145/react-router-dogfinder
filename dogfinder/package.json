@@ -3,12 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "*",
-    "@testing-library/react": "*",
     "@testing-library/user-event": "*",
     "axios": "*",
     "concurrently": "*",
-    "json-server": "*",
+    "json-server": "^1.0.0-alpha.23",
     "react": "*",
     "react-dom": "*",
     "react-router-dom": "*",
@@ -18,10 +16,10 @@
   "scripts": {
     "start": "concurrently --kill-others \"npm run start-fe\" \"npm run start-be\"",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest --env=jsdom",
     "eject": "react-scripts eject",
     "start-fe": "react-scripts start",
-    "start-be": "json-server --watch db.json --delay 500 --port 5001"
+    "start-be": "json-server --watch db.json --port 5001"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -37,5 +35,16 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.9",
+    "@babel/preset-env": "^7.23.9",
+    "@babel/preset-react": "^7.23.3",
+    "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/react": "^14.2.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "jest-transform-stub": "^2.0.0",
+    "ts-jest": "^29.1.2"
   }
 }
